@@ -1,0 +1,493 @@
+/* =========================================
+   1. THEME VARIABLES (Botanical Minimalist)
+   ========================================= */
+:root {
+    --bg-paper: #F9F7F2;       /* Warm Cream Background */
+    --bg-white: #ffffff;
+    --sage-dark: #2F3E34;      /* Deep Green Text */
+    --sage-main: #4A5D4F;      /* Primary Green */
+    --sage-light: #E8EDE9;     /* Soft Green Tint */
+    --gold: #C5A059;           /* Elegant Gold Accent */
+    --text-grey: #666666;
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+/* =========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-paper);
+    color: var(--sage-dark);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents side scroll on mobile */
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* =========================================
+   3. NAVIGATION
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand a {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--sage-main);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+
+.nav-links a {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--sage-dark);
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+.btn-outline {
+    border: 1px solid var(--sage-main);
+    padding: 0.6rem 1.5rem;
+    transition: 0.3s;
+}
+
+.btn-outline:hover { background: var(--sage-main); color: white; }
+
+/* =========================================
+   4. HOMEPAGE HERO (CENTER LOGO)
+   ========================================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    background: radial-gradient(circle at center, rgba(74, 93, 79, 0.08) 0%, transparent 70%);
+}
+
+.hero-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo Animation */
+.logo-wrapper {
+    margin-bottom: 2rem;
+    animation: floatLogo 6s ease-in-out infinite;
+}
+
+.big-logo {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(74, 93, 79, 0.2));
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--sage-dark);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--sage-main);
+    opacity: 0.6;
+}
+
+.line { width: 1px; height: 50px; background: var(--sage-main); }
+
+
+/* =========================================
+   5. SECTIONS GENERAL
+   ========================================= */
+.section { padding: 6rem 2rem; }
+.bg-white { background-color: var(--bg-white); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.bg-sage { background-color: var(--sage-main); color: white; }
+
+.container { max-width: 1100px; margin: 0 auto; }
+.small-container { max-width: 800px; }
+
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 0.5rem; }
+.separator { width: 60px; height: 2px; background: var(--gold); margin: 1.5rem auto 0; }
+
+.white-text h2 { color: white; }
+.white-text p { color: rgba(255,255,255,0.7); }
+.white-line { background: rgba(255,255,255,0.3); }
+
+/* =========================================
+   6. ABOUT SECTION
+   ========================================= */
+.about-text p {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-grey);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-text .lead {
+    font-size: 1.4rem;
+    color: var(--sage-dark);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 2rem;
+}
+
+.stat { text-align: center; }
+.stat .number { display: block; font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold); line-height: 1; }
+.stat .label { font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--sage-main); }
+
+/* =========================================
+   7. EVENT CARDS & GRID
+   ========================================= */
+.events-grid { 
+    display: grid; 
+    /* Auto-fill ensures cards don't stretch if there's only one result */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 2.5rem; 
+    justify-content: center; 
+}
+
+.event-card { 
+    background: var(--bg-paper); 
+    border: 1px solid #e0e0e0; 
+    transition: 0.3s; 
+    overflow: hidden; 
+    /* Max width prevents stretching on large screens when grid has few items */
+    max-width: 400px; 
+    width: 100%; 
+    margin: 0 auto; 
+}
+
+.event-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+/* Card Image & Poster */
+.card-image { position: relative; height: 200px; overflow: hidden; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.event-card:hover .card-image img { transform: scale(1.05); }
+
+.tag-overlay { 
+    position: absolute; top: 1rem; right: 1rem; 
+    background: var(--gold); color: white; 
+    font-size: 0.7rem; font-weight: bold; text-transform: uppercase; 
+    padding: 0.3rem 0.8rem; letter-spacing: 1px; 
+}
+
+/* Card Content */
+.card-body { padding: 1.5rem; }
+.event-card h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--sage-dark); }
+.date { font-size: 0.85rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--sage-main); text-transform: uppercase; letter-spacing: 1px; }
+.description { font-size: 0.95rem; color: var(--text-grey); margin-bottom: 1.5rem; line-height: 1.5; }
+.winner { font-size: 0.85rem; font-style: italic; color: var(--sage-dark); border-top: 1px solid #eee; padding-top: 0.5rem; }
+
+/* Buttons */
+.btn-text { color: var(--sage-main); font-weight: bold; font-size: 0.9rem; text-decoration: underline; }
+
+.btn-primary { 
+    background-color: var(--sage-main); 
+    color: white; 
+    padding: 1rem 2.5rem; 
+    border-radius: 4px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-size: 0.9rem; 
+    display: inline-block; 
+}
+
+.btn-primary:hover { background-color: var(--sage-dark); }
+.archive-link-wrapper { text-align: center; margin-top: 3rem; }
+
+/* =========================================
+   8. CREW (HIERARCHY & PHOTOS)
+   ========================================= */
+.leadership-tier {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.crew-card {
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Tier 1 Cards */
+.leader-card { width: 100%; max-width: 350px; background: rgba(255,255,255,0.1); border-color: var(--gold); }
+.leader-card h3 { font-size: 1.5rem; margin: 1rem 0 0.5rem; color: white; }
+
+.deputy-card { width: 100%; max-width: 300px; }
+.deputy-card h3 { font-size: 1.3rem; margin: 1rem 0 0.5rem; color: white; }
+
+.role-badge { 
+    display: inline-block; background: var(--gold); color: var(--sage-dark); 
+    font-size: 0.7rem; font-weight: bold; padding: 0.3rem 0.8rem; 
+    border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; 
+}
+
+.bio { font-size: 0.9rem; opacity: 0.8; line-height: 1.4; }
+
+/* Tier 2 Teams */
+.teams-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; }
+.team-group { flex: 1; min-width: 300px; text-align: center; }
+
+.team-title { 
+    color: var(--gold); font-family: var(--font-serif); font-size: 1.2rem; 
+    margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); 
+    padding-bottom: 0.5rem; display: inline-block; 
+}
+
+.members-grid { 
+    display: grid; 
+    /* CHANGED: Forces exactly 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem; 
+    margin-top: 1.5rem; 
+}
+
+.member-card { text-align: center; }
+.member-card h4 { font-size: 0.95rem; color: white; margin-bottom: 0.2rem; }
+.role-small { font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+
+/* Crew Photos */
+.crew-photo {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    display: block;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s ease;
+    background-color: #ddd; /* Placeholder */
+}
+
+.crew-photo:hover { transform: scale(1.05); border-color: var(--gold); }
+.crew-photo.large { width: 130px; height: 130px; border-width: 4px; }
+.crew-photo.medium { width: 110px; height: 110px; }
+.crew-photo.small { width: 70px; height: 70px; margin-bottom: 0.5rem; border-width: 2px; }
+
+/* =========================================
+   9. ARCHIVE PAGE SPECIFIC
+   ========================================= */
+.archive-hero {
+    background: var(--sage-dark); color: white; text-align: center; padding: 6rem 2rem 4rem;
+}
+.archive-hero h1 { font-family: var(--font-serif); font-size: 3.5rem; margin-bottom: 0.5rem; }
+.archive-hero p { color: rgba(255,255,255,0.7); }
+
+/* Year Label & Grid Logic */
+.year-label {
+    font-size: 2rem;
+    font-family: var(--font-serif);
+    color: var(--gold);
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    /* CRITICAL: Makes the header span full width in the grid */
+    grid-column: 1 / -1; 
+}
+
+/* Filters */
+.filter-bar {
+    display: flex; justify-content: center; gap: 1.5rem; padding: 2rem; 
+    background: white; border-bottom: 1px solid #eee; flex-wrap: wrap;
+}
+
+.filter {
+    cursor: pointer; text-transform: uppercase; font-size: 0.8rem; 
+    letter-spacing: 1px; color: var(--text-grey); padding-bottom: 5px; 
+    border-bottom: 2px solid transparent; transition: 0.3s;
+}
+
+.filter.active, .filter:hover { color: var(--sage-main); border-bottom-color: var(--sage-main); }
+
+/* =========================================
+   10. FOOTER & ANIMATIONS
+   ========================================= */
+footer { text-align: center; padding: 4rem 2rem; font-size: 0.9rem; color: var(--text-grey); }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.socials a { color: var(--sage-main); font-size: 1.2rem; margin: 0 10px; transition: 0.3s; }
+.socials a:hover { color: var(--gold); }
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes floatLogo { 
+    0% { transform: translateY(0px); } 
+    50% { transform: translateY(-15px); } 
+    100% { transform: translateY(0px); } 
+}
+
+/* =========================================
+   11. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Use a JS toggle for full mobile menu if needed */
+    .hero h1 { font-size: 3rem; }
+    .stats-row { flex-direction: column; gap: 2rem; }
+    .leadership-tier { flex-direction: column; align-items: center; }
+}
+
+/* --- THE POLAROID VIBE --- */
+
+.polaroid-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/* The Card Itself */
+.polaroid-card {
+    background-color: #fff;
+    padding: 1rem 1rem 3rem 1rem; /* Extra bottom padding for the "handwritten" text */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+    max-width: 280px;
+}
+
+/* The Tape Effect (Visual Flair) */
+.tape {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px); /* Makes it look like frosted tape */
+    z-index: 10;
+    border: 1px solid rgba(255,255,255,0.2);
+    transform: translateX(-50%) rotate(-2deg);
+}
+
+/* The Image Area */
+.polaroid-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #333;
+    filter: sepia(20%); /* Adds a slight vintage filter to photos */
+    transition: 0.3s;
+}
+
+.polaroid-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Text */
+.polaroid-caption {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #333;
+    font-family: 'Indie Flower', cursive; /* You can import a handwriting font, or fallback to serif */
+}
+
+.polaroid-caption h3 {
+    font-family: var(--font-serif); /* Keep names readable */
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+    color: #222;
+}
+
+.scribble {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--sage-main);
+    font-size: 0.9rem;
+}
+
+/* --- THE ROTATIONS (The "Vibe" Part) --- */
+
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(3deg); }
+
+/* --- INTERACTION --- */
+
+.polaroid-card:hover {
+    transform: scale(1.1) rotate(0deg) !important; /* Straighten and zoom */
+    z-index: 100; /* Bring to front */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.polaroid-card:hover .polaroid-img {
+    filter: sepia(0%); /* Remove vintage filter on hover */
+}
+
+/* Small grid adjustments for team members */
+.small-grid .polaroid-card {
+    max-width: 220px;
+    padding: 0.8rem 0.8rem 2rem 0.8rem;
+}
+.small-grid .polaroid-img {
+    height: 180px;
+}
+.small-grid h4 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: #444;
+}
